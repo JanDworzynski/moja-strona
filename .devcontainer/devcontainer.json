@@ -1,0 +1,7 @@
+{
+  "name": "moja-strona",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [80, 8081]
+}
