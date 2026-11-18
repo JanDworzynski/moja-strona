@@ -1,7 +1,7 @@
 # Moja strona
 
-Prosta strona w PHP: nagłówek, imię, nazwisko, przycisk i stopka.
-Przycisk dodaje wpis do tabeli `wpisy` w bazie `strona` (widać to w phpMyAdmin).
+Prosta strona w PHP: nagłówek, pola imię i nazwisko, przycisk i stopka.
+Przycisk zapisuje wpisane dane do tabeli `wpisy` w bazie `strona` (widać to w phpMyAdmin).
 
 - `index.php` - strona z przyciskiem
 - `baza/baza.sql` - tabela `wpisy`

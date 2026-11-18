@@ -4,5 +4,3 @@ CREATE TABLE wpisy (
   nazwisko VARCHAR(50),
   data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyński');

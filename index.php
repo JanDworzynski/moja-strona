@@ -3,9 +3,11 @@ $baza = new mysqli("127.0.0.1", "student", "Kalafior_Rower_57x", "strona");
 $baza->set_charset("utf8mb4");
 
 $info = "";
-if (isset($_POST["dodaj"])) {
-    $baza->query("INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyński')");
-    $info = "Dodano wpis do bazy";
+if (isset($_POST["zapisz"])) {
+    $zapytanie = $baza->prepare("INSERT INTO wpisy (imie, nazwisko) VALUES (?, ?)");
+    $zapytanie->bind_param("ss", $_POST["imie"], $_POST["nazwisko"]);
+    $zapytanie->execute();
+    $info = "Zapisano w bazie";
 }
 ?>
 <!DOCTYPE html>
@@ -19,16 +21,15 @@ if (isset($_POST["dodaj"])) {
     <h1>Moja strona</h1>
   </header>
 
-  <p>Imię: Jan</p>
-  <p>Nazwisko: Dworzyński</p>
-
   <form method="post">
-    <button name="dodaj">Dodaj do bazy</button>
+    <p>Imię: <input type="text" name="imie" required></p>
+    <p>Nazwisko: <input type="text" name="nazwisko" required></p>
+    <button name="zapisz">Zapisz</button>
   </form>
   <p><?php echo $info; ?></p>
 
   <footer>
-    <p>Jan Dworzyński 2026</p>
+    <p>Stopka strony 2026</p>
   </footer>
 </body>
 </html>
