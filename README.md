@@ -1,12 +1,12 @@
 # Moja strona
 
-Prosta strona z nagłówkiem, stopką, imieniem i nazwiskiem oraz przyciskiem.
+Prosta strona w PHP: nagłówek, imię, nazwisko, przycisk i stopka.
+Przycisk dodaje wpis do tabeli `wpisy` w bazie `strona` (widać to w phpMyAdmin).
 
-- `index.html` - strona na GitHub Pages, przycisk uruchamia skrypt z pliku `skrypt.js` i pokazuje log kliknięć
-- `php/index.php` - wersja z PHP, przycisk dodaje wpis do bazy MySQL (MariaDB), log pokazuje wpisy z tabeli
+- `index.php` - strona z przyciskiem
 - `baza/baza.sql` - tabela `wpisy`
-- `.devcontainer` - ustawienia Codespaces (PHP, baza, phpMyAdmin)
+- `.devcontainer` - Codespaces: PHP, baza MySQL (MariaDB), phpMyAdmin
 - `motyw.sh` - instalacja motywu darkwolf do phpMyAdmin
 - `dokumentacja.pdf` - opis konfiguracji
 
-Strona PHP: port 80, phpMyAdmin: port 8081 (login: student, hasło jest w pliku .devcontainer/docker-compose.yml)
+Strona: port 80, phpMyAdmin: port 8081
