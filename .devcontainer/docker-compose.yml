@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    volumes:
+      - ..:/var/www/html
+    network_mode: service:db
+
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: strona
+      MARIADB_USER: student
+      MARIADB_PASSWORD: student
+    volumes:
+      - ../baza:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    network_mode: service:db
+    environment:
+      PMA_HOST: 127.0.0.1
+      APACHE_PORT: 8081
+    volumes:
+      - ../motyw/darkwolf:/var/www/html/themes/darkwolf
