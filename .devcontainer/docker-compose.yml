@@ -8,10 +8,10 @@ services:
   db:
     image: mariadb:11
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: Pomidor_Lodka_83z
       MARIADB_DATABASE: strona
       MARIADB_USER: student
-      MARIADB_PASSWORD: student
+      MARIADB_PASSWORD: Kalafior_Rower_57x
     volumes:
       - ../baza:/docker-entrypoint-initdb.d
 

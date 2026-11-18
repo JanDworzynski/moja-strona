@@ -1,17 +1,9 @@
 <?php
 include "polaczenie.php";
 
-$info = "";
-
 // po kliknieciu przycisku dodajemy wpis do bazy
 if (isset($_POST["dodaj"])) {
-    $polaczenie->query("INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyński')");
-    $info = "Dodano wpis do bazy";
-}
-
-if (isset($_POST["usun"])) {
-    $polaczenie->query("DELETE FROM wpisy");
-    $info = "Usunięto wszystkie wpisy";
+    $polaczenie->query("INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyski')");
 }
 
 $wynik = $polaczenie->query("SELECT * FROM wpisy ORDER BY id DESC");
@@ -20,46 +12,30 @@ $wynik = $polaczenie->query("SELECT * FROM wpisy ORDER BY id DESC");
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Moja strona - PHP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jan Dworzyski - PHP</title>
   <link rel="stylesheet" href="../styl.css">
 </head>
 <body>
   <header>
-    <h1>Moja strona (PHP + MySQL)</h1>
+    <h1>Jan Dworzyski</h1>
+    <p>Imi>: Jan | Nazwisko: Dworzyński</p>
   </header>
 
   <main>
-    <h2>Jan Dworzyński</h2>
-
-    <form method="post">
-      <button type="submit" name="dodaj">Dodaj wpis do bazy</button>
-      <button type="submit" name="usun">Usuń wpisy</button>
-    </form>
-
-    <p><?php echo $info; ?></p>
-
-    <p>Liczba wpisów: <?php echo $wynik->num_rows; ?></p>
-
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Imię</th>
-        <th>Nazwisko</th>
-        <th>Data</th>
-      </tr>
-      <?php while ($w = $wynik->fetch_assoc()) { ?>
-      <tr>
-        <td><?php echo $w["id"]; ?></td>
-        <td><?php echo $w["imie"]; ?></td>
-        <td><?php echo $w["nazwisko"]; ?></td>
-        <td><?php echo $w["data"]; ?></td>
-      </tr>
-      <?php } ?>
-    </table>
+    <div class="karta">
+      <p>Przycisk uruchamia skrypt PHP, który dodaje wpis do bazy danych. Poniżej log z tabeli <b>wpisy</b>.</p>
+      <form method="post">
+        <button type="submit" name="dodaj">Zapisz w bazie</button>
+      </form>
+      <div class="log">
+        <?php while ($w = $wynik->fetch_assoc()) { ?>
+          <p>&gt; [<?php echo $w["data"]; ?>] wpis nr <?php echo $w["id"]; ?>: <?php echo $w["imie"] . " " . $w["nazwisko"]; ?></p>
+        <?php } ?>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>Jan Dworzyński 2026</p>
-  </footer>
+  <footer>Jan Dworzyński 2026</footer>
 </body>
 </html>
