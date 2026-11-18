@@ -29,7 +29,7 @@ if (isset($_POST["zapisz"])) {
   <p><?php echo $info; ?></p>
 
   <footer>
-    <p>Stopka strony 2026</p>
+    <p>Stopka strony</p>
   </footer>
 </body>
 </html>
