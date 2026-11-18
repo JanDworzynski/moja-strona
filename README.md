@@ -9,4 +9,4 @@ Prosta strona z nagłówkiem, stopką, imieniem i nazwiskiem oraz przyciskiem.
 - `motyw.sh` - instalacja motywu darkwolf do phpMyAdmin
 - `dokumentacja.pdf` - opis konfiguracji
 
-Strona PHP: port 80, phpMyAdmin: port 8081 (login: student, o jest w pliku .devcontainer/docker-compose.yml)has
+Strona PHP: port 80, phpMyAdmin: port 8081 (login: student, hasło jest w pliku .devcontainer/docker-compose.yml)

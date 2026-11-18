@@ -3,7 +3,7 @@ include "polaczenie.php";
 
 // po kliknieciu przycisku dodajemy wpis do bazy
 if (isset($_POST["dodaj"])) {
-    $polaczenie->query("INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyski')");
+    $polaczenie->query("INSERT INTO wpisy (imie, nazwisko) VALUES ('Jan', 'Dworzyński')");
 }
 
 $wynik = $polaczenie->query("SELECT * FROM wpisy ORDER BY id DESC");
@@ -13,13 +13,13 @@ $wynik = $polaczenie->query("SELECT * FROM wpisy ORDER BY id DESC");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jan Dworzyski - PHP</title>
+  <title>Jan Dworzyński - PHP</title>
   <link rel="stylesheet" href="../styl.css">
 </head>
 <body>
   <header>
-    <h1>Jan Dworzyski</h1>
-    <p>Imi>: Jan | Nazwisko: Dworzyński</p>
+    <h1>Jan Dworzyński</h1>
+    <p>Imię: Jan | Nazwisko: Dworzyński</p>
   </header>
 
   <main>
